@@ -1,4 +1,4 @@
-# Ms. Pajamas Game Engine
+# Ms. Pajamas Game Engine <a href="https://phigarcia.github.io/MSPJ-Website/" target="_blank"><img src="./media/MsPJs.gif" alt="Ms. PJs walk cycle GIF" title="Ms. PJs" height="64px"></a>
 
 The [Ms. Pajamas Game Engine](https://phigarcia.github.io/MSPJ-Website/) aims to simplify and expidite building top-down GBA-era RPGs.
 
@@ -86,7 +86,7 @@ mingw32-make.exe paintbrush
 
 #### Installation
 
-The `mspj_engine.so` Python library can be used locally in a Python project or installed globally for use across projects. For instructions on installing the local library for global use, [see Python's Installing Packages](https://packaging.python.org/en/latest/tutorials/installing-packages/#installing-from-local-archives).
+The `mspj_engine.so` Python library can be used locally in a Python project or installed globally for use across projects. For instructions on installing the local library for global use, [see Python — Installing Packages](https://packaging.python.org/en/latest/tutorials/installing-packages/#installing-from-local-archives).
 
 The tile map paintbrush editor can be used locally or installed globally as well.
 
@@ -168,7 +168,13 @@ engine.Shutdown();
 
 ### Running the game
 
-Run the [helloWorld.py](./examples/helloWorld.py) script as you would any other Python script. 
+Run the [helloWorld.py](./examples/helloWorld.py) script as you would any other Python script.
+
+To run this example game, run the Python script like so:
+
+```sh
+python ./examples/helloWorld.py
+```
 
 > **Note:**
 > *The Python library binary requires a Python version of 3.11 or greater. You may have to specify the specific python version when trying to run the script:*
@@ -176,12 +182,6 @@ Run the [helloWorld.py](./examples/helloWorld.py) script as you would any other 
 > ```sh
 > python3.11 ./examples/helloWorld.py
 > ```
-
-To run this example game, run the Python script like so:
-
-```sh
-python ./examples/helloWorld.py
-```
 
 ### Result
 

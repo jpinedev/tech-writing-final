@@ -2,7 +2,7 @@
 
 The [Ms. Pajamas Game Engine](https://phigarcia.github.io/MSPJ-Website/) aims to simplify and expidite building top-down GBA-era RPGs.
 
-<img src="https://phigarcia.github.io/MSPJ-Website/images/mspajamas.gif" alt="Ms. PJs walk cycle GIF" title="Ms. PJs" height="64px">
+<a href="https://phigarcia.github.io/MSPJ-Website/" target="_blank"><img src="./media/MsPJs.gif" alt="Ms. PJs walk cycle GIF" title="Ms. PJs" height="64px"></a>
 
 ## Description
 
@@ -116,7 +116,7 @@ Rather than moving the executable to a specific folder on your machine, you can 
 
 ## Using the Engine
 
-The following example game can be found at [helloWorld.py](./helloWorld.py).
+The following example game can be found at [helloWorld.py](./examples/helloWorld.py).
 
 ```python
 import mspj_engine
@@ -168,26 +168,26 @@ engine.Shutdown();
 
 ### Running the game
 
-Run the [helloWorld.py](./helloWorld.py) script as you would any other Python script. 
+Run the [helloWorld.py](./examples/helloWorld.py) script as you would any other Python script. 
 
 > **Note:**
 > *The Python library binary requires a Python version of 3.11 or greater. You may have to specify the specific python version when trying to run the script:*
 >
 > ```sh
-> python3.11 ./helloWorld.py
+> python3.11 ./examples/helloWorld.py
 > ```
 
 To run this example game, run the Python script like so:
 
 ```sh
-python ./helloWorld.py
+python ./examples/helloWorld.py
 ```
 
 ### Result
 
 A game screen should appear with a forest scene and purple-haired player character that can walk around the world.
 
-![GIF of player character walking around the world](gameScreenshot.png)
+![Screenshot of player character walking around the world](./media/gameScreenshot.png)
 
 ### Troubleshooting
 
@@ -195,7 +195,7 @@ If you run into any errors that prevent the game from launching:
 
 1. Ensure that the compiled Python library (`mspj_engine.so`) is in the same directory as the Python script.
 2. Ensure that the name of the import (`import mspj_engine`) matches the name of the Python library (without the extension).
-3. Specify a Python version to use (`^3.6`) by calling it directly: `python3.11 ./helloWorld.py`.
+3. Specify a Python version to use (`^3.6`) by calling it directly: `python3.11 ./examples/helloWorld.py`.
 
 ## Using the Paintbrush Editor
 
@@ -206,3 +206,5 @@ If you run into any errors that prevent the game from launching:
 The [Ms. Pajamas Game Engine](https://phigarcia.github.io/MSPJ-Website/) was created by Marvin Chong, Samik Mathur, Phi Garcia, and Jake Pine. The name of the engine comes from the combination of first initials of all team members (MSPJ's engine).
 
 Additional credit to [Mike Shah](https://www.youtube.com/@MikeShah) for his excellent instruction, and Robert Nystrom's *[Game Programming Patterns](https://gameprogrammingpatterns.com)* book for architecture inspiration and coding examples.
+
+<a href="https://phigarcia.github.io/MSPJ-Website/" target="_blank"><img src="./media/MsPJs.gif" alt="Ms. PJs walk cycle GIF" title="Ms. PJs" height="64px"></a>

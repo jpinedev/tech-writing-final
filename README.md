@@ -1,4 +1,4 @@
-# Ms. Pajamas Game Engine <a href="https://phigarcia.github.io/MSPJ-Website/" target="_blank"><img src="./media/MsPJs.gif" alt="Ms. PJs walk cycle GIF" title="Ms. PJs" height="64px"></a>
+# Ms. Pajamas Game Engine
 
 The [Ms. Pajamas Game Engine](https://phigarcia.github.io/MSPJ-Website/) aims to simplify and expidite building top-down GBA-era RPGs.
 

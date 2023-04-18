@@ -6,13 +6,12 @@ Aims to simplify and expidite building top-down GBA-era RPGs.
 
 This engine focuses on streamlining the process of creating a top-down tile-based RPG through worldbuilding tools and simple scene management.
 
-Tile maps are the core of this engine. Tile maps allow for ...
 
 ## Installation and Setup
 
 When compiling the project for yourself, you will need to follow the steps below. Otherwise, if you are using the [precompiled Python library](TODO_LINK_HERE), skip to [Using the Engine](#using-the-engine).
 
-### Dependancies
+### Dependencies
 
 #### pybind11
 
@@ -20,23 +19,23 @@ This engine uses [pybind11](https://github.com/pybind/pybind11) to export the op
 
 For more detailed installation instructions, see [pybind11 — Installing the library](https://pybind11.readthedocs.io/en/stable/installing.html).
 
+##### Install with brew (Mac and Linux/Unix only)
+
+```sh
+brew install pybind11
+```
+
 ##### Install with Pip
 
 ```sh
 pip install pybind11
 ```
 
-##### Install with brew
-
-```sh
-brew install pybind11
-```
-
 #### SDL (and Extensions)
 
 This engine uses [SDL](https://www.libsdl.org) for cross-platform development. SDL allows us to create windows, display 2D graphics, play audio, and collect user input, so that we can focus on developing features of the engine.
 
-The installation of SDL is less streamlined than pybind11. The [SDL Wiki](https://wiki.libsdl.org/SDL2/Installation) explains how to compile the core library on all supported platforms. However, we recommend following [Mike Shah](https://www.youtube.com/@MikeShah)'s tutorials on installing the precompiled binaries on [Windows](https://www.youtube.com/watch?v=DQ-NBjBFLJ4&t=7s), [Mac](https://www.youtube.com/watch?v=V6ACATpl2LQ), and [Linux](https://www.youtube.com/watch?v=P3_xhDIP7bc) respectively.
+The installation of SDL is less streamlined than pybind11. The [SDL Wiki](https://wiki.libsdl.org/SDL2/Installation) explains how to compile the core library on all supported platforms. However, we recommend following [Mike Shah](https://www.youtube.com/@MikeShah)'s tutorials on installing the precompiled binaries on [Windows](https://www.youtube.com/watch?v=DQ-NBjBFLJ4&t=7s), [Mac](https://www.youtube.com/watch?v=V6ACATpl2LQ), and [Linux/Unix](https://www.youtube.com/watch?v=P3_xhDIP7bc) respectively.
 
 You will also need to install the following extensions of SDL to finish the setup process:
 
@@ -45,11 +44,14 @@ You will also need to install the following extensions of SDL to finish the setu
 
 ### Compilation
 
-The project comes with a Makefile that should work on Windows, Mac, and Linux.
+The project comes with a Makefile that should work on Windows, Mac, and Linux/Unix.
 
-#### For Mac and Linux users
+> **Note:**
+> *If you would like to compile your own binary with an older version of Python (^3.6), specify by setting the Makefile variable `PY=python3.X`.*
 
-The following `make` directive will compile the engine into a Python library (`mspj_engine.so`):
+#### For Mac and Linux/Unix users
+
+Navigate to the project folder with the Makefile. The following `make` directive will compile the engine into a Python library (`mspj_engine.so`):
 
 ```sh
 make pybind
@@ -63,17 +65,51 @@ make paintbrush
 
 #### For Windows Users
 
-The same directives should be used as above (`pybind` and `paintbrush`) but instead of `make`, use `mingw32-make.exe`.
+Navigate to the project folder with the Makefile. The following `make` directive will compile the engine into a Python library (`mspj_engine.so`):
+
+```sh
+mingw32-make.exe pybind
+```
+
+The following `make` directive will compile the tile map paintbrush editor executable (`mspj-paintbrush-editor`):
+
+```sh
+mingw32-make.exe paintbrush
+```
 
 #### Installation
 
-The `mspj_engine.so` Python library can be used locally in a Python project or installed globally for use across projects. [EXPLAIN_HOW]
+The `mspj_engine.so` Python library can be used locally in a Python project or installed globally for use across projects. For instructions on installing the local library for global use, [see Python's Installing Packages](https://packaging.python.org/en/latest/tutorials/installing-packages/#installing-from-local-archives).
 
-The tile map paintbrush editor can be used locally or installed globally as well. [EXPLAIN_HOW]
+The tile map paintbrush editor can be used locally or installed globally as well.
+
+##### On Mac and Linux/Unix
+
+First, navigate to the folder containing the executable. Second, add executable permissions to the exectuable file: 
+
+```sh
+chmod +x ./mspj-paintbrush-editor
+```
+
+Third, copy the executable into your local bin folder. You may have to `sudo` and provide an admin password to complete this action.
+
+```sh
+cp ./mspj-paintbrush-editor /usr/local/bin
+```
+
+Finally, confirm that the installation was successful by navigating to any other folder and attempting to run the following command:
+
+```sh
+mspj-paintbrush-editor
+```
+
+##### On Windows
+
+Rather than moving the executable to a specific folder on your machine, you can use the program anywhere by adding it to your `PATH` environment variable. Follow [this guide](https://medium.com/@kevinmarkvi/how-to-add-executables-to-your-path-in-windows-5ffa4ce61a53) on how to edit your environment variables and add the program to your `PATH`.
 
 ## Using the Engine
 
-The following example game can be found at [test.py](./test.py).
+The following example game can be found at [helloWorld.py](./helloWorld.py).
 
 ```python
 import mspj_engine
@@ -123,11 +159,34 @@ engine.MainGameLoop();
 engine.Shutdown();
 ```
 
+### Running the game
+
+Run the [helloWorld.py](./helloWorld.py) script as you would any other Python script. 
+
+> **Note:**
+> *The Python library binary requires a Python version of 3.11 or greater. You may have to specify the specific python version when trying to run the script:*
+>
+> ```sh
+> python3.11 ./helloWorld.py
+> ```
+
+#### On Mac and Linux/Unix
+
 To run this example game, run the Python script like so:
 
 ```sh
-python ./test.py
+python ./helloWorld.py
 ```
+
+#### On Windows
+
+To run this example game, run the Python script like so:
+
+```sh
+py ./helloWorld.py
+```
+
+### Result
 
 A game screen should appear with a forest scene and purple-haired player character that can walk around the world.
 
@@ -139,7 +198,7 @@ If you run into any errors that prevent the game from launching:
 
 1. Ensure that the compiled Python library (`mspj_engine.so`) is in the same directory as the Python script.
 2. Ensure that the name of the import (`import mspj_engine`) matches the name of the Python library (without the extension).
-3. Specify a Python version to use (`^3.9`) by calling it directly: `python3.11 ./test.py`.
+3. Specify a Python version to use (`^3.6`) by calling it directly: `python3.11 ./helloWorld.py`.
 
 ## Using the paintbrush
 

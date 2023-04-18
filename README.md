@@ -1,6 +1,6 @@
 # Ms. Pajamas Game Engine
 
-This engine aims to simplify and expidite building top-down GBA-era RPGs.
+The [Ms. Pajamas Game Engine](https://phigarcia.github.io/MSPJ-Website/) aims to simplify and expidite building top-down GBA-era RPGs.
 
 ## Description
 
@@ -201,6 +201,6 @@ If you run into any errors that prevent the game from launching:
 
 ## Credits
 
-The [Ms. Pajamas Game Engine](#ms-pajamas-game-engine) was created by Marvin Chong, Samik Mathur, Phi Garcia, and Jake Pine. The name of the engine comes from the combination of first initials of all team members (MSPJ's engine).
+The [Ms. Pajamas Game Engine](https://phigarcia.github.io/MSPJ-Website/) was created by Marvin Chong, Samik Mathur, Phi Garcia, and Jake Pine. The name of the engine comes from the combination of first initials of all team members (MSPJ's engine).
 
 Additional credit to [Mike Shah](https://www.youtube.com/@MikeShah) for his excellent instruction, and Robert Nystrom's *[Game Programming Patterns](https://gameprogrammingpatterns.com)* book for architecture inspiration and coding examples.

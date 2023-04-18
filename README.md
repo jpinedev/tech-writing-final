@@ -1,11 +1,16 @@
 # Ms. Pajamas Game Engine
 
-Aims to simplify and expidite building top-down GBA-era RPGs.
+This engine aims to simplify and expidite building top-down GBA-era RPGs.
 
 ## Description
 
 This engine focuses on streamlining the process of creating a top-down tile-based RPG through worldbuilding tools and simple scene management.
 
+The engine uses an Entity-Component System (ECS) for managing objects and components in the game.
+
+Users can write their own scripts in Python and use them in the engine by instantiating them as a `BehaviorComponent`. These components are built within the entity-component framework, so they act identical to predefined components.
+
+The engine ships with a world-editor application for creating and editing tile maps for use in the game. The editor provides tools for painting tiles from a [texture atlas](https://en.wikipedia.org/wiki/Texture_atlas) onto the tile map, erasing tiles, and painting colliders on tiles. See [Using the Paintbrush Editor](#using-the-paintbrush) for more info.
 
 ## Installation and Setup
 
@@ -170,20 +175,10 @@ Run the [helloWorld.py](./helloWorld.py) script as you would any other Python sc
 > python3.11 ./helloWorld.py
 > ```
 
-#### On Mac and Linux/Unix
-
 To run this example game, run the Python script like so:
 
 ```sh
 python ./helloWorld.py
-```
-
-#### On Windows
-
-To run this example game, run the Python script like so:
-
-```sh
-py ./helloWorld.py
 ```
 
 ### Result
@@ -200,12 +195,12 @@ If you run into any errors that prevent the game from launching:
 2. Ensure that the name of the import (`import mspj_engine`) matches the name of the Python library (without the extension).
 3. Specify a Python version to use (`^3.6`) by calling it directly: `python3.11 ./helloWorld.py`.
 
-## Using the paintbrush
+## Using the Paintbrush Editor
 
 **-- THIS FEATURE IS IN DEVELOPMENT --**
 
 ## Credits
 
-The [Ms. Pajamas Game Engine](#ms-pajamas-game-engine) was created by Marvin Chong, Samik Mathur, Phi Garcia, and Jake Pine. The name of the engine comes from the combination of first initials of all team members (MSPJ).
+The [Ms. Pajamas Game Engine](#ms-pajamas-game-engine) was created by Marvin Chong, Samik Mathur, Phi Garcia, and Jake Pine. The name of the engine comes from the combination of first initials of all team members (MSPJ's engine).
 
 Additional credit to [Mike Shah](https://www.youtube.com/@MikeShah) for his excellent instruction, and Robert Nystrom's *[Game Programming Patterns](https://gameprogrammingpatterns.com)* book for architecture inspiration and coding examples.

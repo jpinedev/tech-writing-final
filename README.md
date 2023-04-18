@@ -1,9 +1,8 @@
 # Ms. Pajamas Game Engine
 
-<img src="https://phigarcia.github.io/MSPJ-Website/images/mspajamas.gif" alt="Ms. Pajamas walk cycle GIF" style="float: right; display: block; margin: -10px; max-height: 6rem">
-
 The [Ms. Pajamas Game Engine](https://phigarcia.github.io/MSPJ-Website/) aims to simplify and expidite building top-down GBA-era RPGs.
 
+<img src="https://phigarcia.github.io/MSPJ-Website/images/mspajamas.gif" alt="Ms. PJs walk cycle GIF" title="Ms. PJs" height="64px">
 
 ## Description
 

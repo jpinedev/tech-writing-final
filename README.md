@@ -12,7 +12,7 @@ The engine uses an Entity-Component System (ECS) for managing objects and compon
 
 Users can write their own scripts in Python and use them in the engine by instantiating them as a `BehaviorComponent`. These components are built within the entity-component framework, so they act identical to predefined components.
 
-The engine ships with a world-editor application for creating and editing tile maps for use in the game. The editor provides tools for painting tiles from a [texture atlas](https://en.wikipedia.org/wiki/Texture_atlas) onto the tile map, erasing tiles, and painting colliders on tiles. See [Using the Paintbrush Editor](#using-the-paintbrush) for more info.
+The engine ships with a world-editor application for creating and editing tile maps for use in the game. The editor provides tools for painting tiles from a [texture atlas](https://en.wikipedia.org/wiki/Texture_atlas) onto the tile map, erasing tiles, and painting colliders on tiles. See [Using the Paintbrush Editor](#using-the-paintbrush-editor) for more info.
 
 ## Installation and Setup
 
@@ -56,7 +56,7 @@ The project comes with a Makefile that should work on Windows, Mac, and Linux/Un
 > **Note:**
 > *If you would like to compile your own binary with an older version of Python (^3.6), specify by setting the Makefile variable `PY=python3.X`.*
 
-#### For Mac and Linux/Unix users
+#### For Mac and Linux/Unix Users
 
 Navigate to the project folder with the Makefile. The following `make` directive will compile the engine into a Python library (`mspj_engine.so`):
 
@@ -132,7 +132,7 @@ engine.Start();
 
 # ------- all scene setup should happen after this line -------
 
-# Load the texture atlas for the tilemap
+# Load the texture atlas for the tilemap (where each tile is 32x32 pixels)
 engine.LoadTextureAtlas("./images/character-sprite/path/path-sheet.bmp", 32, 32);
 
 # Setup our TileMap
@@ -142,9 +142,6 @@ tileMapComponent = engine.InstantiateTileMapComponent(tileMapObject);
 tileMapComponent.SetDisplayTileSize(64, 64);
 # This example tile map is 20x11 in our game.
 tileMapComponent.GenerateMapFromFile("./tilemap-levels/level1");
-# Print out the map to the console
-# so we can see what was created.
-tileMapComponent.PrintMap();
 
 # Note: Player must be created after the tilemap to be rendered after (above) the tilemap
 # Create our player game object, all components created here
@@ -155,7 +152,14 @@ controller = engine.InstantiateControllerComponent(player);
 player.GetTransform().SetPosition(128, 64);
 # Prepare the sprite
 sprite = engine.InstantiateSpriteRendererComponent(player);
-sprite.LoadImage("./images/character-sprite/walk-cycle/character-walk-spritesheet.bmp");
+# Load the spritesheet
+playerSpritesheet = mspj_engine.LoadSpritesheet("./images/character-sprite/walk-cycle/character-walk-spritesheet.bmp");
+# Set the size of the sprites on the spritesheet (32x32 pixels)
+playerSpritesheet.SetSpriteSize(32, 32);
+# Assign the spritesheet to the player's sprite renderer
+sprite.SetSpritesheet(playerSpritesheet);
+# Set the size of the sprite in the world (32x32 pixels)
+sprite.SetDisplaySize(32, 32);
 
 # ------- all scene setup should finish before this line -------
 
@@ -199,7 +203,38 @@ If you run into any errors that prevent the game from launching:
 
 ## Using the Paintbrush Editor
 
-**-- THIS FEATURE IS IN DEVELOPMENT --**
+The Paintbrush Editor is a tilemap editor where you can paint tiles to create a world. The Paintbrush Editor can be launched (after compiling or downloading) via the following command:
+
+```sh
+./mspj-paintbrush-editor <path/to/tileMapFile> <path/to/textureAtlas>
+```
+
+The tile map file is a plain text file format that stores tile information like which tile sprite to render and whether or not the tile should have a collider on it.
+
+### Editor Preview
+
+When launched, the program should bring up a window like so:
+
+![Paintbrush Editor demo image](https://phigarcia.github.io/MSPJ-Website/images/pic3.png)
+
+### Editor Modes
+
+This data can be altered using the various modes of the Paintbrush Editor:
+
+- Brush mode (`b`): paint tiles with the current tile sprite.
+- Erase mode (`e`): remove sprites from tiles.
+- Collider brush mode (`c`): paint colliders onto the tiles.
+- Collider erase mode (`r`): remove colliders from tiles.
+
+These modes can be activated by clicking on their respective button in the tile palette GUI (as seen above), or by pressing their respective hotkeys (as listed above).
+
+You can select which tile to paint in brush mode by typing in the sprite's index in the texture atlas into the tile palette's text input field. In the image above, the user has selected the sprite of index `1` to paint in the world.
+
+### Video Demonstration
+
+Below, you will find a full demonstration of the Paintbrush Editor, using all of the different modes, and loading the resulting tile map into a game.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KwtUnPAUiUQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Credits
 

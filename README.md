@@ -16,7 +16,7 @@ The engine ships with a world-editor application for creating and editing tile m
 
 ## Installation and Setup
 
-When compiling the project for yourself, you will need to follow the steps below. Otherwise, if you are using the [precompiled Python library](TODO_LINK_HERE), skip to [Using the Engine](#using-the-engine).
+When compiling the project for yourself, you will need to follow the steps below. Otherwise, if you are using the [precompiled Python library](https://phigarcia.github.io/MSPJ-Website/), skip to [Using the Engine](#using-the-engine).
 
 ### Dependencies
 

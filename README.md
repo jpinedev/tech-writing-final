@@ -209,17 +209,21 @@ The Paintbrush Editor is a tilemap editor where you can paint tiles to create a 
 ./mspj-paintbrush-editor <path/to/tileMapFile> <path/to/textureAtlas>
 ```
 
-The tile map file is a plain text file format that stores tile information like which tile sprite to render and whether or not the tile should have a collider on it.
-
 ### Editor Preview
 
 When launched, the program should bring up a window like so:
 
 ![Paintbrush Editor demo image](https://phigarcia.github.io/MSPJ-Website/images/pic3.png)
 
+### Tile Map Data
+
+The tile map file is a plain text file format that stores tile information like which tile sprite to render and whether or not the tile should have a collider on it.
+
+Changes made to the tile map using the Paintbrush Editor are automatically saved upon exit.
+
 ### Editor Modes
 
-This data can be altered using the various modes of the Paintbrush Editor:
+The tile map data can be altered using the various modes of the Paintbrush Editor:
 
 - Brush mode (`b`): paint tiles with the current tile sprite.
 - Erase mode (`e`): remove sprites from tiles.
@@ -228,13 +232,11 @@ This data can be altered using the various modes of the Paintbrush Editor:
 
 These modes can be activated by clicking on their respective button in the tile palette GUI (as seen above), or by pressing their respective hotkeys (as listed above).
 
-You can select which tile to paint in brush mode by typing in the sprite's index in the texture atlas into the tile palette's text input field. In the image above, the user has selected the sprite of index `1` to paint in the world.
+You can select which tile to paint in brush mode by typing the sprite's index in the texture atlas into the tile palette's text input field. In the image above, the user has selected the sprite of index `1` to paint in the world.
 
 ### Video Demonstration
 
-Below, you will find a full demonstration of the Paintbrush Editor, using all of the different modes, and loading the resulting tile map into a game.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/KwtUnPAUiUQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+[Here you will find a full demonstration video of the Paintbrush Editor](https://youtu.be/KwtUnPAUiUQ), using all of the different modes, and loading the resulting tile map into a game.
 
 ## Credits
 

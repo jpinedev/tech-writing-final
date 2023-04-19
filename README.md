@@ -209,6 +209,11 @@ The Paintbrush Editor is a tilemap editor where you can paint tiles to create a 
 ./mspj-paintbrush-editor <path/to/tileMapFile> <path/to/textureAtlas>
 ```
 
+You must supply 2 arguments to the program:
+
+1. The file location of the tile map you would like to edit.
+2. The file location of the texture atlas that will be used to render the tiles in the tile map.
+
 ### Editor Preview
 
 When launched, the program should bring up a window like so:
